@@ -1,5 +1,5 @@
 name: ShellCheck
-on: [pull_request.main]
+on: [pull_request]
 jobs:
   shellcheck:
   # You may pin to the exact commit or the version.
