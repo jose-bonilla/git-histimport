@@ -2,26 +2,15 @@
 A quick tool that can import git repos into each other and bring history along.
 
 ## Usage
-The default use of this script is to call it from the root of the repository that you are importing Into. If you want, you can pass in a path to a repository or a url to a repo that you have access to as the target. If you pass in a repo url, it will be clone the repo at `/tmp/<repo_name>`.
+The simplest way to use this script is to use it to import a remote repository into an already locally cloned repository.
 
-## Import into local repo
-The source repository needs to be a path to a repository that you currently have access to.
+The more slightly advanced usage allows you to import a source remote repository into a specific target remote or local repository by simply specifying the target remote repository url or the target local repository path. If you specify a remote repository url, the result will be found at `/tmp/<repo_name>`.
 
-`git-histimport.sh <source_repository>`
+### Simple:
+`git-histimport.sh <remote_source_repository_url>`
 
-Ex: `git-histimport.sh https://github.com/something/hello_world`
+### Advanced:
+`git-histimport.sh <remote_source_repository_url> <remote_target_repository_url|local_target_repository_path>`
 
-NOTE: If you're within a git repository, but not at the root level, we assume you want to import the source repository into the current directory. If you want to target a specific directory of the repository, please continue reading
-
-NOTE: It's highly advised to check in these changes as their own commit/merge/whatever. Sometimes making changes on top of running this script can mess with established history (Don't tempt the beasts of this, I won't help)
-
-## Import into specific repository
-This method requires two arguments: source_repository and target_repository
-
-Both have to have one of the following requirements:
-* A path to a repository on your local computer
-* A path to a repository that you currently have access to
-
-`git-histimport.sh <source_repository> <target_repository>`
-
-## Import into specific directory
+## Caveats
+It is **highly** recommended and advised for the purpose of simplicity and understanding that an import action like this be the only major change in a pull request or commit. You should import the git repository and ensure it's checked into the default/primary/release branch of whatever you're working on before branching off of that. Dabbling my hands in a current commit after a recent import has awoken quite the git demons that I'd advise we jsut stay away from. Just keep it simple, and get it merged in.
