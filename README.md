@@ -27,4 +27,4 @@ that an import action like this be the only major change in a pull request or co
 You should import the git repository and ensure it's checked into the default/primary/release
 branch of whatever you're working on before branching off of that. Dabbling my
 hands in a current commit after a recent import has awoken quite the git demons
-that I'd advise we jsut stay away from. Just keep it simple, and get it merged in.
+that I'd advise we just stay away from. Just keep it simple, and get it merged in.
